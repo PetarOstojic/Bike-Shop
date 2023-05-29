@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike SHOP</title>
+    
+</head>
+<body>
+    <style>/* Stilizacija navigacionog menija */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+            position: relative;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: rgb(0, 89, 253);
+        }
+        
+        /* Animacija podvlačenja */
+        nav li::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(2, 126, 228);
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        nav li:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .company-name {
+            font-size: 2em;
+            color: blue;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .title {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .main-title {
+            font-size: 2.5em;
+            color: blue;
+            font-weight: bold;
+            /* Add any additional styling you prefer */
+        }
+        
+        .subtitle {
+            margin-top: 10px;
+            font-size: 1.5em;
+            /* Add any additional styling you prefer */
+        }
+        
+        .main {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .card {
+            display: inline-block;
+            width: 300px;
+            height: 400px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(50, 133, 211, 0.2);
+            background-color: #f8f8f8;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            background-color: #8fd3f4;
+            color: white;
+        }
+        
+        .card img {
+            width: 250px;
+            height: 200px;
+            border-radius: 5px;
+        }
+        
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .card-price {
+            font-size: 1em;
+            margin-top: 5px;
+        }
+        
+        .card-description {
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        
+        .header {
+            background-color: #03c1da;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .header .company-name {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .header ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .header li {
+            display: inline;
+        }
+        
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .header a:hover {
+            background-color: #158ed4;
+        }
+        
+        .title {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .card {
+            width: 300px;
+            height: 400px;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 243, 223, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 255, 234, 0.2);
+        }
+        
+        .card img {
+            width: 200px;
+            height: 200px;
+            border-radius: 2%;
+        }
+        
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .card-price {
+            font-size: 1em;
+            margin-top: 5px;
+            color: #888;
+        }
+        
+        .card-description {
+            font-size: 0.9em;
+            margin-top: 5px;
+            text-align: center;
+        }
+        
+        /* Dodatni stilovi */
+        body {
+            background-image: url("Bike\ shop\ pozadina\ plava.png");
+            background-size: cover;
+        }
+        .header {
+            background-color: rgba(0, 81, 233, 0);
+            color: #fff;
+            padding: 20px;
+        }
+        .main-title {
+            font-size: 5em; /* Promijenite veličinu fonta prema svojim preferencijama */
+            font-weight: bold; /* Dodaje debljinu (bold) tekstu */
+            font-family: "@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');", sans-serif; /* Promijenite font prema svojim preferencijama */
+            color: blue; /* Promijenite boju prema svojim preferencijama */
+            /* Dodajte dodatne stilove prema potrebi */
+        }
+        
+        </style>
+    <div class="header">
+        <nav>
+            <ul>
+                <li>
+                    <span class="company-name">BIKE SHOP</span>
+                </li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">TEAM</a></li>
+                <li><a href="#">DROPDOWN</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="title">
+        <h1 class="main-title">IT IS TIME TO RACE</h1>
+        <p class="subtitle">NOW OR NEVER</p>
+    </div>
+    <div class="main">
+        <div class="card">
+            <img src="bike1.jpeg" alt="Bike 1">
+            <h3 class="card-title">Bike 1</h3>
+            <p class="card-price">$100</p>
+            <p class="card-description">A high-performance bike with superior quality and durability.</p>
+        </div>
+        
+        <div class="card">
+            <img src="bike2.jpeg" alt="Bike 2">
+            <h3 class="card-title">Bike 2</h3>
+            <p class="card-price">$150</p>
+            <p class="card-description">An advanced bike designed for professional racing enthusiasts.</p>
+        </div>
+        <div class="card">
+            <img src="bike3.jpeg" alt="Bike 1">
+            <h3 class="card-title">Bike 1</h3>
+            <p class="card-price">$200</p>
+            <p class="card-description">A high-performance bike with superior quality and durability.</p>
+        </div>
+        <div class="card">
+            <img src="bike4.jpeg" alt="Bike 1">
+            <h3 class="card-title">Bike 1</h3>
+            <p class="card-price">$300</p>
+            <p class="card-description">A high-performance bike with superior quality and durability.</p>
+        </div>
+        <div class="card">
+            <img src="bike5.jpeg" alt="Bike 1">
+            <h3 class="card-title">Bike 1</h3>
+            <p class="card-price">$1000</p>
+            <p class="card-description">A high-performance bike with superior quality and durability.</p>
+        </div>
+        <div class="card">
+            <img src="bike1.jpeg" alt="Bike 1">
+            <h3 class="card-title">Bike 1</h3>
+            <p class="card-price">$100000</p>
+            <p class="card-description">A high-performance bike with superior quality and durability.</p>
+        </div>
+        <div class="card">
+            <img src="bike2.jpeg" alt="Bike 1">
+            <h3 class="card-title">Bike 1</h3>
+            <p class="card-price">$12000</p>
+            <p class="card-description">A high-performance bike with superior quality and durability.</p>
+        </div>
+        <div class="card">
+            <img src="bike3.jpeg" alt="Bike 1">
+            <h3 class="card-title">Bike 1</h3>
+            <p class="card-price">$3000</p>
+            <p class="card-description">A high-performance bike with superior quality and durability.</p>
+        </div>
+        <div class="card">
+            <img src="bike4.jpeg" alt="Bike 1">
+            <h3 class="card-title">Bike 1</h3>
+            <p class="card-price">$750</p>
+            <p class="card-description">A high-performance bike with superior quality and durability.</p>
+        </div>
+        
+    </div>
+    
+    <footer style="background-color: #ffffff; padding: 20px;">
+        <div style="text-align: center;">
+          <h3>Kontakt informacije</h3>
+          <p>Broj telefona: +123456789</p>
+          <p>Adresa: Primjer ulica 123, Grad</p>
+          <p>E-mail: info@example.com</p>
+        </div>
+      
+        <div style="text-align: center; margin-top: 20px;">
+          <form>
+            <input type="text" placeholder="Pretraži">
+            <button type="submit">Pretraži</button>
+          </form>
+        </div>
+      </footer>
+      
+    
+</body>
+</html>
