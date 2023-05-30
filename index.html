@@ -5,236 +5,263 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bike SHOP</title>
-    
-</head>
+    <link rel="stylesheet" href="style.css">
 <body>
-    <style>/* Stilizacija navigacionog menija */
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        nav li {
-            display: inline-block;
-            margin-right: 20px;
-            position: relative;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: rgb(0, 89, 253);
-        }
-        
-        /* Animacija podvlačenja */
-        nav li::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: rgb(2, 126, 228);
-            bottom: -5px;
-            left: 0;
-            transform: scaleX(0);
-            transition: transform 0.3s;
-        }
-        
-        nav li:hover::after {
-            transform: scaleX(1);
-        }
-        
-        .company-name {
-            font-size: 2em;
-            color: blue;
-            display: inline-block;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-        
-        .title {
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        .main-title {
-            font-size: 2.5em;
-            color: blue;
-            font-weight: bold;
-            /* Add any additional styling you prefer */
-        }
-        
-        .subtitle {
-            margin-top: 10px;
-            font-size: 1.5em;
-            /* Add any additional styling you prefer */
-        }
-        
-        .main {
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        .card {
-            display: inline-block;
-            width: 300px;
-            height: 400px;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            transition: transform 0.3s, background-color 0.3s;
-            cursor: pointer;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(50, 133, 211, 0.2);
-            background-color: #f8f8f8;
-        }
-        
-        .card:hover {
-            transform: scale(1.05);
-            background-color: #8fd3f4;
-            color: white;
-        }
-        
-        .card img {
-            width: 250px;
-            height: 200px;
-            border-radius: 5px;
-        }
-        
-        .card-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        
-        .card-price {
-            font-size: 1em;
-            margin-top: 5px;
-        }
-        
-        .card-description {
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-        
-        body, html {
-            height: 100%;
-            font-family: Arial, sans-serif;
-        }
-        
-        .header {
-            background-color: #03c1da;
-            color: #fff;
-            padding: 20px;
-        }
-        
-        .header .company-name {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        
-        .header ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-        
-        .header li {
-            display: inline;
-        }
-        
-        .header a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px;
-            transition: background-color 0.3s;
-        }
-        
-        .header a:hover {
-            background-color: #158ed4;
-        }
-        
-        .title {
-            text-align: center;
-            margin: 50px 0;
-        }
-        
-        .main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .card {
-            width: 300px;
-            height: 400px;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 243, 223, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 255, 234, 0.2);
-        }
-        
-        .card img {
-            width: 200px;
-            height: 200px;
-            border-radius: 2%;
-        }
-        
-        .card-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        
-        .card-price {
-            font-size: 1em;
-            margin-top: 5px;
-            color: #888;
-        }
-        
-        .card-description {
-            font-size: 0.9em;
-            margin-top: 5px;
-            text-align: center;
-        }
-        
-        /* Dodatni stilovi */
-        body {
-            background-image: url("Bike\ shop\ pozadina\ plava.png");
-            background-size: cover;
-        }
-        .header {
-            background-color: rgba(0, 81, 233, 0);
-            color: #fff;
-            padding: 20px;
-        }
-        .main-title {
-            font-size: 5em; /* Promijenite veličinu fonta prema svojim preferencijama */
-            font-weight: bold; /* Dodaje debljinu (bold) tekstu */
-            font-family: "@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');", sans-serif; /* Promijenite font prema svojim preferencijama */
-            color: blue; /* Promijenite boju prema svojim preferencijama */
-            /* Dodajte dodatne stilove prema potrebi */
-        }
-        
-        </style>
+    <style>
+        /* Stilizacija navigacionog menija */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: rgb(0, 89, 253);
+}
+
+/* Animacija podvlačenja */
+nav li::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(2, 126, 228);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+nav li:hover::after {
+    transform: scaleX(1);
+}
+
+.company-name {
+    font-size: 2em;
+    color: blue;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.main-title {
+    font-size: 2.5em;
+    color: blue;
+    font-weight: bold;
+    /* Add any additional styling you prefer */
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 1.5em;
+    /* Add any additional styling you prefer */
+}
+
+.main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card {
+    display: inline-block;
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(50, 133, 211, 0.2);
+    background-color: #f8f8f8;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background-color: #8fd3f4;
+    color: white;
+}
+
+.card img {
+    width: 250px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card-price {
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+.card-description {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #03c1da;
+    color: #fff;
+    padding: 20px;
+}
+
+.header .company-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.header li {
+    display: inline;
+}
+
+.header a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.header a:hover {
+    background-color: #158ed4;
+}
+
+.title {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 243, 223, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 255, 234, 0.2);
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 2%;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card-price {
+    font-size: 1em;
+    margin-top: 5px;
+    color: #888;
+}
+
+.card-description {
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Dodatni stilovi */
+body {
+    background-image: url("john-rodenn-castillo-eluzJSfkNCk-unsplash.jpg");
+    background-size: cover;
+}
+.header {
+    background-color: rgba(0, 81, 233, 0);
+    color: #fff;
+    padding: 20px;
+}
+.main-title {
+    font-size: 5em; /* Promijenite veličinu fonta prema svojim preferencijama */
+    font-weight: bold; /* Dodaje debljinu (bold) tekstu */
+    font-family: "@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');", sans-serif; /* Promijenite font prema svojim preferencijama */
+    color: blue; /* Promijenite boju prema svojim preferencijama */
+    /* Dodajte dodatne stilove prema potrebi */
+}
+.about-section {
+    background-color: rgba(242, 242, 242, 0.8);
+    padding: 50px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.about-section img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+}
+
+    </style>
     <div class="header">
         <nav>
             <ul>
@@ -313,22 +340,33 @@
         </div>
         
     </div>
-    
-    <footer style="background-color: #ffffff; padding: 20px;">
-        <div style="text-align: center;">
-          <h3>Kontakt informacije</h3>
-          <p>Broj telefona: +123456789</p>
-          <p>Adresa: Primjer ulica 123, Grad</p>
-          <p>E-mail: info@example.com</p>
-        </div>
+    <div class="about-section">
+        <h2>About</h2>
+        <img src="compay1.jpeg" alt="Company Image 1">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam dolor in lectus posuere, sit amet euismod libero hendrerit. Mauris sed tortor metus. Nam mattis enim et elit fermentum viverra. Pellentesque accumsan libero quis lectus ultrices, eu eleifend elit vestibulum. Sed pulvinar, tortor a consequat feugiat, tellus sem venenatis arcu, vitae elementum tellus ex vitae lectus. Nunc fermentum pellentesque felis, vel auctor erat dignissim ut. Curabitur euismod viverra mi, at tempor mauris consequat in. Aliquam malesuada mauris a orci fermentum vulputate. Etiam bibendum eros ut congue cursus. Suspendisse volutpat commodo sem, ac suscipit elit tristique non. Vivamus ullamcorper, erat et bibendum dapibus, velit urna feugiat tellus, at egestas odio nunc id quam.</p>
+        <img src="company2.jpg" alt="Company Image 2">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam dolor in lectus posuere, sit amet euismod libero hendrerit. Mauris sed tortor metus. Nam mattis enim et elit fermentum viverra. Pellentesque accumsan libero quis lectus ultrices, eu eleifend elit vestibulum. Sed pulvinar, tortor a consequat feugiat, tellus sem venenatis arcu, vitae elementum tellus ex vitae lectus. Nunc fermentum pellentesque felis, vel auctor erat dignissim ut. Curabitur euismod viverra mi, at tempor mauris consequat in. Aliquam malesuada mauris a orci fermentum vulputate. Etiam bibendum eros ut congue cursus. Suspendisse volutpat commodo sem, ac suscipit elit tristique non. Vivamus ullamcorper, erat et bibendum dapibus, velit urna feugiat tellus, at egestas odio nunc id quam.</p>
+    </div>
+    <div class="footer">
+        <footer style="background-color: #ffffff; padding: 20px;">
+            <div style="text-align: center;">
+              <h3>Kontakt informacije</h3>
+              <p>Broj telefona: +123456789</p>
+              <p>Adresa: Primjer ulica 123, Grad</p>
+              <p>E-mail: info@example.com</p>
+            </div>
+          
+            <div style="text-align: center; margin-top: 20px;">
+              <form>
+                <input type="text" placeholder="Pretraži">
+                <button type="submit">Pretraži</button>
+              </form>
+            </div>
+          </footer>
+          
+    </div>
+   
       
-        <div style="text-align: center; margin-top: 20px;">
-          <form>
-            <input type="text" placeholder="Pretraži">
-            <button type="submit">Pretraži</button>
-          </form>
-        </div>
-      </footer>
       
     
 </body>
